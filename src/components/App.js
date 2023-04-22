@@ -12,7 +12,7 @@ function App() {
   const [selectedCategory, setSelectedCategory] = useState("All")
 
   const handleDelete = (text) => {
-    setTasks(tasks.filter(task => task.text !== text));
+    setTasks(tasks.filter(task => task.text !== text))
   }
 
   const handleSelectedCategory = (category) => {
@@ -29,7 +29,7 @@ function App() {
   return (
     <div className="App">
       <h2>My tasks</h2>
-      <CategoryFilter categories={CATEGORIES} selectedCategory={selectedCategory} handleSelectedCategory/>
+      <CategoryFilter categories={CATEGORIES} selectedCategory={selectedCategory} handleSelectedCategory={handleSelectedCategory}/>
       <NewTaskForm categories={CATEGORIES.filter(category => category !== "All")} addNewTask={addNewTask}/>
       <TaskList tasks={filteredTasks} handleDelete={handleDelete}/>
     </div>
